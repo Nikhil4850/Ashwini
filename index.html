@@ -546,13 +546,13 @@
                                 <button class="test-button">Click here to fix meeting</button>
                             </a>
                             <br>
-                            <img src="C:\Users\Nikhil\OneDrive\Desktop\Career helper\5-Star-Rating-PNG-HD-Image.png" style="width: 170px; height: 50px;">
+                            <img src="https://www.pngall.com/wp-content/uploads/4/5-Star-Rating-PNG-HD-Image.png" style="width: 170px; height: 50px;">
                         </div>
                     </div>
                     <div class="text-outside">
                         <a href="https://nikhil4850.github.io/Login/" >
-                            <img src="C:\Users\Nikhil\OneDrive\Desktop\Career helper\camera.png" style="width: 50px;">
-                           <h3>Book</h3>
+                            <img src="https://www.pngarts.com/files/7/Video-Call-PNG-Image-Transparent.png" style="width: 50px;">
+                           <h3>Appointment</h3>
                         </a>
                         
                     </div>
@@ -568,7 +568,7 @@
                         Miss Ashwini is a Certified Master Career Guide</p>
                     <br>
                     <a href="https://www.linkedin.com/in/harshadip-umbarkar-68687330a/">
-                        <img src="C:\Users\Nikhil\OneDrive\Desktop\Career helper\linkedIn.png" style="width: 150px;">
+                        <img src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG10.png" style="width: 150px;">
                     </a>
                     <br>
                     <p>
@@ -793,4 +793,55 @@
             <button id="sendBtn">Send</button>
         </div>
     </div>
-    <script src="artificialinteligence.js"></script>
+    <script>
+            document.querySelector('.chat-icon').addEventListener('click', function() {
+    const chatContainer = document.getElementById('chat-container');
+    if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+        chatContainer.style.display = 'block';
+    } else {
+        chatContainer.style.display = 'none';
+    }
+});
+
+document.getElementById('sendBtn').addEventListener('click', function() {
+    let userInput = document.getElementById('userInput').value.trim();
+    let chatbox = document.getElementById('chatbox');
+    
+    if (userInput !== "") {
+        chatbox.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+        document.getElementById('userInput').value = '';
+
+        // Simulate AI response
+        setTimeout(() => {
+            let aiResponse = getAIResponse(userInput);
+            chatbox.innerHTML += `<p><strong>Nikhil:</strong> ${aiResponse}</p>`;
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }, 1000);
+    }
+});
+
+function getAIResponse(input) {
+    // Simple AI response logic (you can replace this with an actual AI API)
+    const responses = {
+        "hello": "Hello! How can I assist you today?",
+        "how are you": "I'm just a guide to help!",
+        "what is your name": "I am your friendly Nikhil",
+        "nikhil": "Bol n",
+        "jevan zal": "Ho tuz",
+        "j1 zal": "Nahi karnar aata",
+        "nahi": "kadhi jevnar aahes",
+        "what i can do after 10th": "You may go to the consultants and then select 10th class for the information.",
+        "what i can do after tenth": "You may go to the consultants and then select 10th class for the information.",
+        "what i can do after ten": "You may go to the consultants and then select 10th class for the information.",
+        "what i can do after 12th": "You may go to the consultants and then select 12th class for the information.",
+        "what i can do after twelveeth": "You may go to the consultants and then select 12th class for the information.",
+        "what i can do after twelvee": "You may go to the consultants and then select 12th class for the information.",
+        "what i do after 10th": "You may go to the consultants and then select 10th class for the information.",
+        "mi ya website la pahu kashi":"Please Home var click kara"
+    };
+
+    let lowerInput = input.toLowerCase();
+    return responses[lowerInput] || "Sorry, I don't understand that.";
+}
+
+    </script>
